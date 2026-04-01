@@ -38,7 +38,11 @@ public class LoginValidator {
         }
         return "Login failed. Please check your credentials.";
     }
-    
+
+    public boolean isUsernameAdmin(String username) {
+        return username != null && VALID_USERNAME.equals(username.trim());
+    }
+
     public static void main(String[] args) {
         LoginValidator validator = new LoginValidator();
         System.out.println(validator.getValidationMessage("admin", "password123"));
